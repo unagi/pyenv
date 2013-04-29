@@ -433,6 +433,14 @@ build_package_python() {
 build_package_jython() {
   {
     build_package_copy
+    if [ ! -e "${PREFIX_PATH}/bin/jython" ]; then # Jython 2.2.x doen't have `./bin/jython`
+      mkdir -p "${PREFIX_PATH}/bin"
+      cat <<EOS > "${PREFIX_PATH}/bin/jython"
+#!/bin/sh
+${JAVA} -Dpython.home="${PREFIX_PATH}" -classpath "${PREFIX_PATH}/jython.jar" org.python.util.jython "\$@"
+EOS
+      chmod a+x "${PREFIX_PATH}/bin/jython"
+    fi
     cd "${PREFIX_PATH}/bin"
     ln -fs jython python
   }
