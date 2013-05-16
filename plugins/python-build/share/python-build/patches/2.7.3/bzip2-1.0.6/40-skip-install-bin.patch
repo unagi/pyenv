@@ -1,0 +1,41 @@
+diff -r -u bzip2-1.0.6.orig/Makefile bzip2-1.0.6/Makefile
+--- bzip2-1.0.6.orig/Makefile	2013-05-16 16:10:24.000000000 +0900
++++ bzip2-1.0.6/Makefile	2013-05-16 16:12:17.000000000 +0900
+@@ -94,37 +94,16 @@
+ 	@cat words3
+ 
+ install: bzip2 bzip2recover libbz2.a
+-	if ( test ! -d $(PREFIX)/bin ) ; then mkdir -p $(PREFIX)/bin ; fi
+ 	if ( test ! -d $(PREFIX)/lib ) ; then mkdir -p $(PREFIX)/lib ; fi
+ 	if ( test ! -d $(PREFIX)/man ) ; then mkdir -p $(PREFIX)/man ; fi
+ 	if ( test ! -d $(PREFIX)/man/man1 ) ; then mkdir -p $(PREFIX)/man/man1 ; fi
+ 	if ( test ! -d $(PREFIX)/include ) ; then mkdir -p $(PREFIX)/include ; fi
+-	cp -f bzip2 $(PREFIX)/bin/bzip2
+-	ln $(PREFIX)/bin/bzip2 $(PREFIX)/bin/bunzip2
+-	ln $(PREFIX)/bin/bzip2 $(PREFIX)/bin/bzcat
+-	cp -f bzip2recover $(PREFIX)/bin/bzip2recover
+-	chmod a+x $(PREFIX)/bin/bzip2
+-	chmod a+x $(PREFIX)/bin/bunzip2
+-	chmod a+x $(PREFIX)/bin/bzcat
+-	chmod a+x $(PREFIX)/bin/bzip2recover
+ 	cp -f bzip2.1 $(PREFIX)/man/man1
+ 	chmod a+r $(PREFIX)/man/man1/bzip2.1
+ 	cp -f bzlib.h $(PREFIX)/include
+ 	chmod a+r $(PREFIX)/include/bzlib.h
+ 	cp -fa libbz2.a libbz2.so* $(PREFIX)/lib
+ 	chmod a+r $(PREFIX)/lib/libbz2.a
+-	cp -f bzexe $(PREFIX)/bin/bzexe
+-	chmod a+x $(PREFIX)/bin/bzexe
+-	cp -f bzgrep $(PREFIX)/bin/bzgrep
+-	ln -s -f $(PREFIX)/bin/bzgrep $(PREFIX)/bin/bzegrep
+-	ln -s -f $(PREFIX)/bin/bzgrep $(PREFIX)/bin/bzfgrep
+-	chmod a+x $(PREFIX)/bin/bzgrep
+-	cp -f bzmore $(PREFIX)/bin/bzmore
+-	ln -s -f $(PREFIX)/bin/bzmore $(PREFIX)/bin/bzless
+-	chmod a+x $(PREFIX)/bin/bzmore
+-	cp -f bzdiff $(PREFIX)/bin/bzdiff
+-	ln -s -f $(PREFIX)/bin/bzdiff $(PREFIX)/bin/bzcmp
+-	chmod a+x $(PREFIX)/bin/bzdiff
+ 	cp -f bzexe.1 bzgrep.1 bzmore.1 bzdiff.1 $(PREFIX)/man/man1
+ 	chmod a+r $(PREFIX)/man/man1/bzexe.1
+ 	chmod a+r $(PREFIX)/man/man1/bzgrep.1
