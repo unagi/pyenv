@@ -588,6 +588,11 @@ has_broken_mac_openssl() {
   [[ "$PYTHON_CONFIGURE_OPTS" != *--with-openssl-dir=* ]]
 }
 
+has_no_bzip2_devel() {
+  # FIXME: should not hardcode header paths
+  [ ! -f /usr/local/include/bzlib.h ] && [ ! -f /usr/include/bzlib.h ]
+}
+
 build_package_mac_openssl() {
   # Install to a subdirectory since we don't want shims for bin/openssl.
   OPENSSL_PREFIX_PATH="${PREFIX_PATH}/openssl"
