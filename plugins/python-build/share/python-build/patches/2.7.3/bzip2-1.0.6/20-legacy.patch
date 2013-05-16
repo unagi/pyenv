@@ -1,5 +1,5 @@
---- manual.texi	2011-12-04 13:55:53.589856334 +1100
-+++ manual.texi	2011-12-04 18:16:28.000000000 +1100
+--- a/manual.texi	2011-12-04 13:55:53.589856334 +1100
++++ b/manual.texi	2011-12-04 18:16:28.000000000 +1100
 @@ -0,0 +1,2880 @@
 +\input texinfo
 +@setfilename untitled.info
@@ -2881,8 +2881,8 @@
 +@end display
 +
 +@bye
---- bzexe.1	2011-12-04 13:55:53.589856334 +1100
-+++ bzexe.1	2011-12-04 18:16:28.000000000 +1100
+--- a/bzexe.1	2011-12-04 13:55:53.589856334 +1100
++++ b/bzexe.1	2011-12-04 18:16:28.000000000 +1100
 @@ -0,0 +1,43 @@
 +.TH BZEXE 1
 +.SH NAME
@@ -2927,8 +2927,8 @@
 +.I chmod
 +or
 +.I chown.
---- manual.info	2011-12-04 13:55:53.589856334 +1100
-+++ manual.info	2011-12-04 18:16:28.000000000 +1100
+--- a/manual.info	2011-12-04 13:55:53.589856334 +1100
++++ b/manual.info	2011-12-04 18:16:28.000000000 +1100
 @@ -0,0 +1,2338 @@
 +This is manual.info, produced by makeinfo version 4.8 from manual.texi.
 +
@@ -5268,8 +5268,8 @@
 +Node: Further Reading85859
 +
 +End Tag Table
---- bzip2recover.c	2010-09-11 09:18:40.000000000 +1000
-+++ bzip2recover.c	2011-12-04 18:16:28.000000000 +1100
+--- a/bzip2recover.c	2010-09-11 09:18:40.000000000 +1000
++++ b/bzip2recover.c	2011-12-04 18:16:28.000000000 +1100
 @@ -24,6 +24,8 @@
  #include <errno.h>
  #include <stdlib.h>
@@ -5308,8 +5308,8 @@
           if (outFile == NULL) {
              fprintf ( stderr, "%s: can't write `%s'\n",
                        progName, outFileName );
---- bzgrep	2007-01-03 13:00:55.000000000 +1100
-+++ bzgrep	2011-12-04 18:16:28.000000000 +1100
+--- a/bzgrep	2007-01-03 13:00:55.000000000 +1100
++++ b/bzgrep	2011-12-04 18:16:28.000000000 +1100
 @@ -1,27 +1,75 @@
  #!/bin/sh
  
@@ -5473,8 +5473,8 @@
 +  test $res -lt $r && res=$r
  done
  exit $res
---- bzdiff	2007-01-03 13:00:55.000000000 +1100
-+++ bzdiff	2011-12-04 18:16:28.000000000 +1100
+--- a/bzdiff	2007-01-03 13:00:55.000000000 +1100
++++ b/bzdiff	2011-12-04 18:16:28.000000000 +1100
 @@ -37,10 +37,6 @@ if test -z "$FILES"; then
  	echo "Usage: $prog [${comp}_options] file [file]"
  	exit 1
@@ -5514,8 +5514,8 @@
  	exit 1
  fi
 +exit "$STAT"
---- manual.xml	2010-09-11 19:36:06.000000000 +1000
-+++ manual.xml	2011-12-04 18:16:28.000000000 +1100
+--- a/manual.xml	2010-09-11 19:36:06.000000000 +1000
++++ b/manual.xml	2011-12-04 18:16:28.000000000 +1100
 @@ -159,13 +159,22 @@ else.</para>
  
   <listitem><para><computeroutput>bzip2</computeroutput> [
@@ -5703,8 +5703,8 @@
  BZ_MEM_ERROR
    if insufficient memory is available 
  BZ_OUTBUFF_FULL
---- bzmore	2007-01-03 13:00:55.000000000 +1100
-+++ bzmore	2011-12-04 18:16:28.000000000 +1100
+--- a/bzmore	2007-01-03 13:00:55.000000000 +1100
++++ b/bzmore	2011-12-04 18:16:28.000000000 +1100
 @@ -24,10 +24,10 @@ else
    # 'stty min 1' resets eof to ^a on both SunOS and SysV!
    cb='min 1 -icanon'; ncb='icanon eof ^d'
@@ -5728,8 +5728,8 @@
  			exit
  		fi
  	fi
---- bzip2.c	2010-09-11 09:04:53.000000000 +1000
-+++ bzip2.c	2011-12-04 18:16:28.000000000 +1100
+--- a/bzip2.c	2010-09-11 09:04:53.000000000 +1000
++++ b/bzip2.c	2011-12-04 18:16:28.000000000 +1100
 @@ -1890,7 +1890,9 @@ IntNative main ( IntNative argc, Char *a
                 case '8': blockSize100k    = 8; break;
                 case '9': blockSize100k    = 9; break;
@@ -5773,8 +5773,8 @@
           setExit(2);
           exit(exitValue);
        }
---- bzexe	2011-12-04 13:55:53.589856334 +1100
-+++ bzexe	2011-12-04 18:16:28.000000000 +1100
+--- a/bzexe	2011-12-04 13:55:53.589856334 +1100
++++ b/bzexe	2011-12-04 18:16:28.000000000 +1100
 @@ -0,0 +1,182 @@
 +#!/bin/sh
 +# gzexe: compressor for Unix executables.
@@ -5958,8 +5958,8 @@
 +  fi
 +done
 +exit $res
---- bzip2.1	2010-09-11 19:35:11.000000000 +1000
-+++ bzip2.1	2011-12-04 18:16:28.000000000 +1100
+--- a/bzip2.1	2010-09-11 19:35:11.000000000 +1000
++++ b/bzip2.1	2011-12-04 18:16:28.000000000 +1100
 @@ -14,6 +14,9 @@ bzip2recover \- recovers data from damag
  [
  .I "filenames \&..."
@@ -5999,8 +5999,8 @@
  .B \-L --license -V --version
  Display the software version, license terms and conditions.
  .TP
---- Makefile	2010-09-11 08:46:02.000000000 +1000
-+++ Makefile	2011-12-04 18:16:28.000000000 +1100
+--- a/Makefile	2010-09-11 08:46:02.000000000 +1000
++++ b/Makefile	2011-12-04 18:16:28.000000000 +1100
 @@ -12,6 +12,8 @@
  # in the file LICENSE.
  # ------------------------------------------------------------------
