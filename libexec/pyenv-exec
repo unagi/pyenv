@@ -31,7 +31,20 @@ fi
 
 PYENV_COMMAND_PATH="$(pyenv-which "$PYENV_COMMAND")"
 PYENV_BIN_PATH="${PYENV_COMMAND_PATH%/*}"
-export LD_LIBRARY_PATH="${PYENV_ROOT}/versions/${PYENV_VERSION}/lib"
+PYENV_LIB_PATH="$(pyenv-library-path)"
+case "$(uname -s)" in
+"Darwin" )
+  DYLD_LIBRARY_PATH="${PYENV_LIB_PATH}:${DYLD_LIBRARY_PATH}"
+  export DYLD_LIBRARY_PATH="${DYLD_LIBRARY_PATH%:}"
+  ;;
+"Linux" )
+  LD_LIBRARY_PATH="${PYENV_LIB_PATH}:${LD_LIBRARY_PATH}"
+  export LD_LIBRARY_PATH="${LD_LIBRARY_PATH%:}"
+  ;;
+#* )
+# FIXME: support more sort of OSs
+# ;;
+esac
 
 for script in $(pyenv-hooks exec); do
   source "$script"

@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+# Summary: Show the library path for current Python version
+set -e
+[ -n "$PYENV_DEBUG" ] && set -x
+
+IFS=: versions=($(pyenv-version-name))
+
+if [ -z "$versions" ]; then
+  exit
+fi
+
+lib_path() {
+  local version="$1"
+  local prefix="$(pyenv-prefix "${version}")"
+  if [ -d "${prefix}/lib" ]; then
+    echo "${prefix}/lib"
+  elif [ -d "${prefix}/Lib" ]; then
+    echo "${prefix}/Lib"
+  else
+    return 1
+  fi
+}
+
+unset PYENV_LIB_PATH
+
+for version in "${versions[@]}"; do
+  if [ "$version" != "system" ]; then
+    if [ -z "${PYENV_LIB_PATH}" ]; then
+      PYENV_LIB_PATH="$(lib_path "${version}")"
+    else
+      PYENV_LIB_PATH="${PYENV_LIB_PATH}:$(lib_path "${version}")"
+    fi
+  fi
+done
+
+echo "${PYENV_LIB_PATH}"
